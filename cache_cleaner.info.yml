@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Contains cache_cleaner.module.
+ */
+
+use Drupal\Core\Cache\Cache;
+
+/**
+ * Implements hook_cron().
+ */
+function cache_cleaner_cron() {
+    // Flush all caches.
+    Cache::invalidateTags(['rendered']);
+}
